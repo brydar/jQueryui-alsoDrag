@@ -3,7 +3,8 @@
     "version": "1.0.0",
     "title": "Enable alsodrag property",
     "author": {
-        "name": "unknow"
+        "name": "unknow",
+        "url": "https://forum.jquery.com/topic/dragging-a-group-of-items-alsodrag-like-alsoresize"
     },
     "licenses": [
         {
