@@ -21,12 +21,14 @@
 		},
 		drag: function () {
 			var that = $(this).data("ui-draggable"),
+			var matrixRegex = /matrix\((-?\d*\.?\d+),\s*0,\s*0,\s*(-?\d*\.?\d+),\s*0,\s*0\)/,
+      var scaleValue = $(this).parent().css('transform').match(matrixRegex),
 			o = that.options,
 			os = that.originalSize,
 			op = that.originalPosition,
 			delta = {
-				top: (that.position.top - op.top) || 0,
-				left: (that.position.left - op.left) || 0
+				top: (that.position.top - op.top) / scaleValue[1] || 0,
+				left: (that.position.left - op.left) / scaleValue[1] || 0
 			},
 
 			_alsoDrag = function (exp, c) {
