@@ -1,5 +1,3 @@
-(function( $, undefined ) {
-
 	$.ui.plugin.add("draggable", "alsoDrag", {
 		start: function() {
 			var that = $(this).data("ui-draggable"),
@@ -55,5 +53,3 @@
 			$(this).removeData("draggable-alsoDrag");
 		}
 	});
-
-})(jQuery);
