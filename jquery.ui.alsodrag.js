@@ -1,3 +1,5 @@
+	var matrixRegex = /matrix\((-?\d*\.?\d+),\s*0,\s*0,\s*(-?\d*\.?\d+),\s*0,\s*0\)/;
+
 	$.ui.plugin.add("draggable", "alsoDrag", {
 		start: function() {
 			var that = $(this).data("ui-draggable"),
@@ -21,7 +23,6 @@
 		},
 		drag: function () {
 			var that = $(this).data("ui-draggable"),
-			var matrixRegex = /matrix\((-?\d*\.?\d+),\s*0,\s*0,\s*(-?\d*\.?\d+),\s*0,\s*0\)/,
       var scaleValue = $(this).parent().css('transform').match(matrixRegex),
 			o = that.options,
 			os = that.originalSize,
