@@ -1,6 +1,8 @@
-$.ui.plugin.add("draggable", "alsoDrag", {
-	start: function() {
-		var that = $(this).data("ui-draggable"),
+(function( $, undefined ) {
+
+	$.ui.plugin.add("draggable", "alsoDrag", {
+		start: function() {
+			var that = $(this).data("ui-draggable"),
 			o = that.options,
 			_store = function (exp) {
 				$(exp).each(function() {
@@ -12,15 +14,15 @@ $.ui.plugin.add("draggable", "alsoDrag", {
 				});
 			};
 
-		if (typeof(o.alsoDrag) === "object" && !o.alsoDrag.parentNode) {
-			if (o.alsoDrag.length) { o.alsoDrag = o.alsoDrag[0]; _store(o.alsoDrag); }
-			else { $.each(o.alsoDrag, function (exp) { _store(exp); }); }
-		}else{
-			_store(o.alsoDrag);
-		}
-	},
-	drag: function () {
-		var that = $(this).data("ui-draggable"),
+			if (typeof(o.alsoDrag) === "object" && !o.alsoDrag.parentNode) {
+				if (o.alsoDrag.length) { o.alsoDrag = o.alsoDrag[0]; _store(o.alsoDrag); }
+				else { $.each(o.alsoDrag, function (exp) { _store(exp); }); }
+			}else{
+				_store(o.alsoDrag);
+			}
+		},
+		drag: function () {
+			var that = $(this).data("ui-draggable"),
 			o = that.options,
 			os = that.originalSize,
 			op = that.originalPosition,
@@ -32,7 +34,7 @@ $.ui.plugin.add("draggable", "alsoDrag", {
 			_alsoDrag = function (exp, c) {
 				$(exp).each(function() {
 					var el = $(this), start = $(this).data("ui-draggable-alsoDrag"), style = {},
-						css = ["top", "left"];
+					css = ["top", "left"];
 
 					$.each(css, function (i, prop) {
 						var sum = (start[prop]||0) + (delta[prop]||0);
@@ -43,13 +45,15 @@ $.ui.plugin.add("draggable", "alsoDrag", {
 				});
 			};
 
-		if (typeof(o.alsoDrag) === "object" && !o.alsoDrag.nodeType) {
-			$.each(o.alsoDrag, function (exp, c) { _alsoDrag(exp, c); });
-		}else{
-			_alsoDrag(o.alsoDrag);
+			if (typeof(o.alsoDrag) === "object" && !o.alsoDrag.nodeType) {
+				$.each(o.alsoDrag, function (exp, c) { _alsoDrag(exp, c); });
+			}else{
+				_alsoDrag(o.alsoDrag);
+			}
+		},
+		stop: function() {
+			$(this).removeData("draggable-alsoDrag");
 		}
-	},
-	stop: function() {
-		$(this).removeData("draggable-alsoDrag");
-	}
-});
+	});
+
+})(jQuery);

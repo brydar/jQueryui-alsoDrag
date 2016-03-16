@@ -6,4 +6,4 @@ A small plugin to enable alsoDrag parameter for jquery ui draggable
   alsodrag: '.someClass'
   });`
 
-All someClass will move with this #someID.
+All `.someClass` will move with this `#someID`.
