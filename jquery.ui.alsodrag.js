@@ -23,7 +23,7 @@
 		},
 		drag: function () {
 			var that = $(this).data("ui-draggable"),
-      var scaleValue = $(this).parent().css('transform').match(matrixRegex),
+      var scaleValue = that.css('transform').match(matrixRegex),
 			console.log(scaleValue[1], $(this).parent()),
 			o = that.options,
 			os = that.originalSize,
