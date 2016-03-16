@@ -22,9 +22,9 @@
 			}
 		},
 		drag: function () {
+			console.log($(this).parent().css('transform'), that.parent());
 			var that = $(this).data("ui-draggable"),
       // var scaleValue = that.parent().css('transform'),
-			console.log(that.parent().css('transform'), that.parent()),
 			o = that.options,
 			os = that.originalSize,
 			op = that.originalPosition,
