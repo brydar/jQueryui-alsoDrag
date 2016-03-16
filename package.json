@@ -1,0 +1,25 @@
+{
+    "name": "jquery.ui.alsodrag",
+    "version": "1.0.0",
+    "title": "Enable alsodrag property",
+    "author": {
+        "name": "unknow"
+    },
+    "licenses": [
+        {
+            "type": "MIT"
+        }
+    ],
+    "dependencies": {
+        "jquery": "^2.2.1",
+        "jquery-ui": "^1.10.5"
+    },
+    "description": "",
+    "keywords": [
+    ],
+    "homepage": "https://github.com/brydar/jQueryui-alsoDrag",
+    "files": [
+      "jquery.ui.alsodrag.js"
+    ],
+    "main": "jquery.ui.alsodrag.js"
+}
