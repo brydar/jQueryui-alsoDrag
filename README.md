@@ -1,2 +1,2 @@
 # jQueryui-alsoDrag
-A small plugin to enable alsoDrag parameter
+A small plugin to enable alsoDrag parameter for jquery ui draggable
